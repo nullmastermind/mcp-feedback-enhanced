@@ -107,8 +107,8 @@ def init_encoding():
 # 初始化編碼（在導入時就執行）
 _encoding_initialized = init_encoding()
 
-# ===== 常數定義 =====
-SERVER_NAME = "互動式回饋收集 MCP"
+# ===== Constants Definition =====
+SERVER_NAME = "Interactive Feedback Collection MCP"
 SSH_ENV_VARS = ["SSH_CONNECTION", "SSH_CLIENT", "SSH_TTY"]
 REMOTE_ENV_VARS = ["REMOTE_CONTAINERS", "CODESPACES"]
 
@@ -266,28 +266,34 @@ def save_feedback_to_file(feedback_data: dict, file_path: str | None = None) -> 
 
 def create_feedback_text(feedback_data: dict) -> str:
     """
-    建立格式化的回饋文字
+    Create formatted feedback text
 
     Args:
-        feedback_data: 回饋資料字典
+        feedback_data: Feedback data dictionary
 
     Returns:
-        str: 格式化後的回饋文字
+        str: Formatted feedback text
     """
     text_parts = []
 
-    # 基本回饋內容
+    # Basic feedback content
     if feedback_data.get("interactive_feedback"):
-        text_parts.append(f"=== 用戶回饋 ===\n{feedback_data['interactive_feedback']}")
+        text_parts.append(
+            f"=== User Feedback (need to reiterate in English if it's not) ===\n{feedback_data['interactive_feedback']}"
+        )
 
-    # 命令執行日誌
+    # Command execution logs
     if feedback_data.get("command_logs"):
-        text_parts.append(f"=== 命令執行日誌 ===\n{feedback_data['command_logs']}")
+        text_parts.append(
+            f"=== Command Execution Log ===\n{feedback_data['command_logs']}"
+        )
 
-    # 圖片附件概要
+    # Image attachments summary
     if feedback_data.get("images"):
         images = feedback_data["images"]
-        text_parts.append(f"=== 圖片附件概要 ===\n用戶提供了 {len(images)} 張圖片：")
+        text_parts.append(
+            f"=== Image Attachments Summary ===\nUser provided {len(images)} image(s):"
+        )
 
         for i, img in enumerate(images, 1):
             size = img.get("size", 0)
@@ -425,14 +431,18 @@ def process_images(images_data: list[dict]) -> list[MCPImage]:
     return mcp_images
 
 
-# ===== MCP 工具定義 =====
+# ===== MCP Tool Definitions =====
 @mcp.tool()
 async def interactive_feedback(
-    project_directory: Annotated[str, Field(description="專案目錄路徑")] = ".",
+    project_directory: Annotated[
+        str, Field(description="Project directory path")
+    ] = ".",
     summary: Annotated[
-        str, Field(description="AI 工作完成的摘要說明")
-    ] = "我已完成了您請求的任務。",
-    timeout: Annotated[int, Field(description="等待用戶回饋的超時時間（秒）")] = 600,
+        str, Field(description="Summary of AI work completed")
+    ] = "I have completed the task you requested.",
+    timeout: Annotated[
+        int, Field(description="Timeout in seconds for waiting user feedback")
+    ] = 600,
 ) -> list:
     """Interactive feedback collection tool for LLM agents.
 
@@ -469,9 +479,9 @@ async def interactive_feedback(
 
         result = await launch_web_feedback_ui(project_directory, summary, timeout)
 
-        # 處理取消情況
+        # Handle cancellation
         if not result:
-            return [TextContent(type="text", text="用戶取消了回饋。")]
+            return [TextContent(type="text", text="User cancelled the feedback.")]
 
         # 儲存詳細結果
         save_feedback_to_file(result)
@@ -562,21 +572,21 @@ async def launch_web_feedback_ui(project_dir: str, summary: str, timeout: int) -
 @mcp.tool()
 def get_system_info() -> str:
     """
-    獲取系統環境資訊
+    Get system environment information
 
     Returns:
-        str: JSON 格式的系統資訊
+        str: System information in JSON format
     """
     is_remote = is_remote_environment()
     is_wsl = is_wsl_environment()
 
     system_info = {
-        "平台": sys.platform,
-        "Python 版本": sys.version.split()[0],
-        "WSL 環境": is_wsl,
-        "遠端環境": is_remote,
-        "介面類型": "Web UI",
-        "環境變數": {
+        "platform": sys.platform,
+        "python_version": sys.version.split()[0],
+        "wsl_environment": is_wsl,
+        "remote_environment": is_remote,
+        "interface_type": "Web UI",
+        "environment_variables": {
             "SSH_CONNECTION": os.getenv("SSH_CONNECTION"),
             "SSH_CLIENT": os.getenv("SSH_CLIENT"),
             "DISPLAY": os.getenv("DISPLAY"),
