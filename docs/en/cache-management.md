@@ -64,7 +64,7 @@ python scripts/cleanup_cache.py --force
 
 ### Issue: Cache grows large again quickly after cleanup
 
-**Cause**: Frequent use of `uvx mcp-feedback-enhanced@latest`
+**Cause**: Frequent use of `uvx mcp-feedback-enhanced-gw@latest`
 
 **Recommendations**:
 1. **Regular cleanup**: Recommend weekly or monthly cleanup

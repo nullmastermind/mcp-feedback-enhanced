@@ -12,11 +12,11 @@ Refactored settings save mechanism to resolve language switching save issues, an
   - Resolved settings not saving correctly during language switching
   - Removed debounce mechanism to ensure immediate settings save
   - Enhanced reliability and consistency of settings save
-- ✨ **Settings Interface Enhancement**: Added corresponding icons to functional sections within settings tabs
+- �?**Settings Interface Enhancement**: Added corresponding icons to functional sections within settings tabs
   - Improved interface visual effects and user experience
   - More intuitive feature identification
 
-### 🛠️ Technical Improvements
+### 🛠�?Technical Improvements
 - 📊 **Unified Storage Architecture**: All settings now use JSON file storage for cross-environment consistency
 - 🔧 **Code Simplification**: Removed complex localStorage-related code, reducing maintenance costs
 
@@ -27,7 +27,7 @@ Refactored settings save mechanism to resolve language switching save issues, an
 ### 🌟 Version Highlights
 Added SSH remote development environment support, resolving Web UI access issues in remote development scenarios. Enhanced macOS compilation support and desktop application stability for improved developer experience.
 
-### ✨ New Features
+### �?New Features
 - 🌐 **SSH Remote Development Support**: Added `MCP_WEB_HOST` environment variable for configuring web server host binding
   - Defaults to `127.0.0.1` for security
   - Can be set to `0.0.0.0` to allow remote access
@@ -44,13 +44,13 @@ Added SSH remote development environment support, resolving Web UI access issues
 - 🔄 **Session History Process Optimization**: Enhanced session saving and management mechanisms
 
 ### 🐛 Bug Fixes
-- 🖥️ **Desktop Application MCP Protocol Fix**: Fixed MCP protocol communication pollution issues in desktop mode
+- 🖥�?**Desktop Application MCP Protocol Fix**: Fixed MCP protocol communication pollution issues in desktop mode
 - 📦 **Packaging Process Fix**: Fixed multi-platform desktop application packaging and publishing issues
 - 🔧 **Release Process Optimization**: Improved stability of automated release workflows
 - 🔥 **Removed ESC Shortcut**: Removed ESC shortcut functionality that could cause accidental closure
 
-### 🛠️ Technical Improvements
-- 🏗️ **Enhanced Build System**: Improved cross-platform compilation configuration and dependency management
+### 🛠�?Technical Improvements
+- 🏗�?**Enhanced Build System**: Improved cross-platform compilation configuration and dependency management
 - 📚 **Documentation Automation**: Enhanced tool self-documentation following FastMCP best practices
 - 🔍 **Enhanced Debugging Features**: Added more detailed debugging information and error handling
 
@@ -66,15 +66,15 @@ Added SSH remote development environment support, resolving Web UI access issues
 ### 🌟 Version Highlights
 Introducing cross-platform desktop application supporting Windows, macOS, and Linux. Significant performance improvements with debounce/throttle mechanisms and enhanced system stability.
 
-### ✨ New Features
-- 🖥️ **Desktop Application**: Native cross-platform desktop app based on Tauri framework, supporting Windows x64, macOS (Intel/Apple Silicon), Linux x64
+### �?New Features
+- 🖥�?**Desktop Application**: Native cross-platform desktop app based on Tauri framework, supporting Windows x64, macOS (Intel/Apple Silicon), Linux x64
 - 📊 **Server-side Session History Storage**: Session records migrated from localStorage to server-side local file storage for improved data consistency and reliability
 - 🔧 **Multi-platform Build Support**: Complete CI/CD pipeline supporting automated multi-platform desktop application builds
 - 📝 **Desktop Mode Configuration**: Added `MCP_DESKTOP_MODE` environment variable for desktop/web mode switching
 - 📋 **AI Work Summary Markdown Display**: Support for Markdown syntax rendering including headers, bold text, code blocks, lists, links and other formats
 
 ### 🚀 Improvements
-- ⚡ **Significant Performance Enhancement**: Introduced debounce/throttle mechanisms to reduce unnecessary rendering and network requests
+- �?**Significant Performance Enhancement**: Introduced debounce/throttle mechanisms to reduce unnecessary rendering and network requests
 - 🌐 **Network Connection Stability**: Improved WebSocket reconnection mechanism with network status detection and intelligent reconnection
 - 🎨 **UI Rendering Optimization**: Optimized rendering performance for session management, statistics, and status indicators
 - 📱 **Responsive Improvements**: Adjusted heartbeat frequency and timeout thresholds to reduce system load
@@ -82,11 +82,11 @@ Introducing cross-platform desktop application supporting Windows, macOS, and Li
 
 ### 🐛 Bug Fixes
 - 🌐 **Network Reconnection Improvements**: Optimized reconnection algorithm with exponential backoff strategy and random jitter
-- 🖥️ **Desktop Mode Adaptation**: Fixed browser auto-launch issues in desktop mode
+- 🖥�?**Desktop Mode Adaptation**: Fixed browser auto-launch issues in desktop mode
 - 📊 **Rendering Performance Fixes**: Resolved duplicate rendering and unnecessary state update issues
 
-### 🛠️ Technical Improvements
-- 🏗️ **Build Process Optimization**: Added Makefile desktop application build commands supporting debug/release modes
+### 🛠�?Technical Improvements
+- 🏗�?**Build Process Optimization**: Added Makefile desktop application build commands supporting debug/release modes
 - 📦 **Dependency Management**: Integrated Rust toolchain supporting cross-platform compilation and packaging
 - 🔍 **Enhanced Development Tools**: Added environment checks, build validation, and cleanup tools
 - 📚 **Documentation Enhancement**: Added desktop application build guide and workflow documentation
@@ -95,7 +95,7 @@ Introducing cross-platform desktop application supporting Windows, macOS, and Li
 ### 📋 Usage Instructions
 - **Desktop Mode**: Set `"MCP_DESKTOP_MODE": "true"` in MCP configuration (refer to `examples/mcp-config-desktop.json`)
 - **Web Mode**: Set `"MCP_DESKTOP_MODE": "false"` in MCP configuration (default, refer to `examples/mcp-config-web.json`)
-- **Test Desktop Mode**: `uvx mcp-feedback-enhanced@latest test --desktop`
+- **Test Desktop Mode**: `uvx mcp-feedback-enhanced-gw@latest test --desktop`
 - **Build Desktop Application**: `make build-desktop-release`
 
 ---
@@ -105,7 +105,7 @@ Introducing cross-platform desktop application supporting Windows, macOS, and Li
 ### 🌟 Version Highlights
 Migrated session management from sidebar to dedicated tab, resolving browser compatibility issues. Added audio notification system with custom audio support.
 
-### ✨ New Features
+### �?New Features
 - 🔊 **Audio Notification System**: Play audio alerts for session updates, supports built-in and custom audio uploads
 - 📚 **Session History Management**: Local session record storage with export and cleanup functionality
 - 💾 **Input Height Memory**: Automatically save and restore textarea input height settings
@@ -130,18 +130,18 @@ Migrated session management from sidebar to dedicated tab, resolving browser com
 This version underwent major architectural refactoring, **completely removing PyQt6 GUI dependencies** and transitioning to a pure Web UI architecture, dramatically simplifying deployment and maintenance. Additionally, multiple smart features were added, including prompt management, auto-submit, session management, and more, comprehensively enhancing user experience and work efficiency.
 
 ### 🔄 Major Architectural Changes
-- 🏗️ **Complete PyQt6 GUI Removal**: Thoroughly removed desktop application dependencies, simplifying installation and deployment processes
+- 🏗�?**Complete PyQt6 GUI Removal**: Thoroughly removed desktop application dependencies, simplifying installation and deployment processes
 - 🌐 **Pure Web UI Architecture**: Unified use of Web interface, supporting all platforms and environments
 - 📦 **Dramatically Simplified Dependencies**: Removed PyQt6, related GUI libraries and other heavy dependencies, significantly reducing installation package size
 - 🚀 **Simpler Deployment**: No need to consider GUI environment configuration, suitable for all development environments
 
-### ✨ Brand New Features
+### �?Brand New Features
 - 📝 **Smart Prompt Management System**:
   - CRUD operations for common prompts (Create, Edit, Delete, Use)
   - Usage frequency statistics and intelligent sorting
   - Quick selection and one-click application functionality
   - Support for auto-submit marking and priority display
-- ⏰ **Auto-Timed Submit Feature**:
+- �?**Auto-Timed Submit Feature**:
   - Configurable countdown timer from 1-86400 seconds
   - Visual countdown display and status indicators
   - Deep integration with prompt management system
@@ -169,7 +169,7 @@ This version underwent major architectural refactoring, **completely removing Py
   - Added extensive translation text, improving localization coverage
   - Improved language selector UI with dropdown design
   - Fixed display issues during language switching
-- 🖼️ **Image Settings Integration**:
+- 🖼�?**Image Settings Integration**:
   - Moved image settings from workspace to settings tab
   - Unified settings management interface
   - Improved organization and layout of setting items
@@ -190,12 +190,12 @@ This version underwent major architectural refactoring, **completely removing Py
 - 🌐 **Localization Switch Fixes**:
   - Fixed partial text not updating during language switching
   - Improved multi-language text loading mechanism
-- 🏗️ **Architecture Stability Fixes**:
+- 🏗�?**Architecture Stability Fixes**:
   - Fixed session management initialization issues
   - Improved error handling and resource cleanup
   - Optimized module loading order and dependencies
 
-### 🛠️ Technical Improvements
+### 🛠�?Technical Improvements
 - 📦 **Modular Architecture**:
   - Complete JavaScript code modular refactoring
   - Adopted ES6+ syntax and modern development patterns
@@ -208,7 +208,7 @@ This version underwent major architectural refactoring, **completely removing Py
 ### 📚 Documentation Updates
 - 📖 **Architecture Documentation Update**: Updated system architecture description to reflect Web-Only design
 - 🔧 **Installation Guide Simplification**: Removed GUI-related installation steps and dependency descriptions
-- 🖼️ **Screenshot Updates**: Updated all interface screenshots to showcase new Web UI design
+- 🖼�?**Screenshot Updates**: Updated all interface screenshots to showcase new Web UI design
 - 📋 **Enhanced API Documentation**: Added API descriptions for new features like prompt management and auto-submit
 
 ---
@@ -218,9 +218,9 @@ This version underwent major architectural refactoring, **completely removing Py
 ### 🌟 Highlights
 This version focuses on improving system stability and user experience, particularly solving the browser launch issue in Cursor SSH Remote environments.
 
-### ✨ New Features
+### �?New Features
 - 🌐 **SSH Remote Environment Support**: Solved Cursor SSH Remote browser launch issues with clear usage guidance
-- 🛡️ **Error Message Improvements**: Provides more user-friendly error messages and solution suggestions when errors occur
+- 🛡�?**Error Message Improvements**: Provides more user-friendly error messages and solution suggestions when errors occur
 - 🧹 **Auto-cleanup Features**: Automatically cleans temporary files and expired sessions to keep the system tidy
 - 📊 **Memory Monitoring**: Monitors memory usage to prevent system resource shortage
 
@@ -228,19 +228,19 @@ This version focuses on improving system stability and user experience, particul
 - 💾 **Resource Management Optimization**: Better system resource management for improved performance
 - 🔧 **Enhanced Error Handling**: Provides clearer explanations and solutions when problems occur
 - 🌐 **Connection Stability**: Improved Web UI connection stability
-- 🖼️ **Image Upload Optimization**: Enhanced stability of image upload functionality
+- 🖼�?**Image Upload Optimization**: Enhanced stability of image upload functionality
 - 🎯 **Auto-focus Input Box**: Automatically focus on feedback input box when window opens, improving user experience (Thanks @penn201500)
 
 ### 🐛 Bug Fixes
 - 🌐 **Connection Issues**: Fixed WebSocket connection related problems
 - 🔄 **Session Management**: Fixed session state tracking issues
-- 🖼️ **Image Processing**: Fixed event handling issues during image upload
+- 🖼�?**Image Processing**: Fixed event handling issues during image upload
 
 ---
 
 ## [v2.2.5] - WSL Environment Support & Cross-Platform Enhancement
 
-### ✨ New Features
+### �?New Features
 - 🐧 **WSL Environment Detection**: Automatically identifies WSL environments and provides specialized support logic
 - 🌐 **Smart Browser Launching**: Automatically invokes Windows browser in WSL environments with multiple launch methods
 - 🔧 **Cross-Platform Testing Enhancement**: Test functionality integrates WSL detection for improved test coverage
@@ -255,7 +255,7 @@ This version focuses on improving system stability and user experience, particul
 ## [v2.2.4] - GUI Experience Optimization & Bug Fixes
 
 ### 🐛 Bug Fixes
-- 🖼️ **Image Duplicate Paste Fix**: Fixed the issue where Ctrl+V image pasting in GUI would create duplicate images
+- 🖼�?**Image Duplicate Paste Fix**: Fixed the issue where Ctrl+V image pasting in GUI would create duplicate images
 - 🌐 **Localization Switch Fix**: Fixed image settings area text not translating correctly when switching languages
 - 📝 **Font Readability Improvement**: Adjusted font sizes in image settings area for better readability
 
@@ -263,10 +263,10 @@ This version focuses on improving system stability and user experience, particul
 
 ## [v2.2.3] - Timeout Control & Image Settings Enhancement
 
-### ✨ New Features
-- ⏰ **User Timeout Control**: Added customizable timeout settings with flexible range from 30 seconds to 2 hours
+### �?New Features
+- �?**User Timeout Control**: Added customizable timeout settings with flexible range from 30 seconds to 2 hours
 - ⏱️ **Countdown Timer**: Real-time countdown timer display at the top of the interface for visual time reminders
-- 🖼️ **Image Size Limits**: Added image upload size limit settings (unlimited/1MB/3MB/5MB)
+- 🖼�?**Image Size Limits**: Added image upload size limit settings (unlimited/1MB/3MB/5MB)
 - 🔧 **Base64 Compatibility Mode**: Added Base64 detail mode to improve image recognition compatibility with AI models
 - 🧹 **UV Cache Management Tool**: Added `cleanup_cache.py` script to help manage and clean UV cache space
 
@@ -276,8 +276,8 @@ This version focuses on improving system stability and user experience, particul
 - 🎯 **Smart Compatibility Hints**: Automatically display Base64 compatibility mode suggestions when image upload fails
 
 ### 🐛 Bug Fixes
-- 🛡️ **Timeout Handling Optimization**: Improved coordination between user-defined timeout and MCP system timeout
-- 🖥️ **Interface Auto-close**: Fixed interface auto-close and resource cleanup logic after timeout
+- 🛡�?**Timeout Handling Optimization**: Improved coordination between user-defined timeout and MCP system timeout
+- 🖥�?**Interface Auto-close**: Fixed interface auto-close and resource cleanup logic after timeout
 - 📱 **Responsive Layout**: Optimized timeout control component display on small screen devices
 
 ---
@@ -286,27 +286,27 @@ This version focuses on improving system stability and user experience, particul
 
 ### 🐛 Bug Fixes
 - 🔄 **Timeout Auto-cleanup**: Fixed GUI/Web UI not automatically closing after MCP session timeout (default 600 seconds)
-- 🛡️ **Resource Management Optimization**: Improved timeout handling mechanism to ensure proper cleanup and closure of all UI resources on timeout
-- ⚡ **Enhanced Timeout Detection**: Strengthened timeout detection logic to correctly handle timeout events in various scenarios
+- 🛡�?**Resource Management Optimization**: Improved timeout handling mechanism to ensure proper cleanup and closure of all UI resources on timeout
+- �?**Enhanced Timeout Detection**: Strengthened timeout detection logic to correctly handle timeout events in various scenarios
 
 ---
 
 ## [v2.2.1] - Window Optimization & Unified Settings Interface
 
 ### 🚀 Improvements
-- 🖥️ **Window Size Constraint Removal**: Removed GUI main window minimum size limit from 1000×800 to 400×300
+- 🖥�?**Window Size Constraint Removal**: Removed GUI main window minimum size limit from 1000×800 to 400×300
 - 💾 **Real-time Window State Saving**: Implemented real-time saving mechanism for window size and position changes
 - ⚙️ **Unified Settings Interface Optimization**: Improved GUI settings page configuration saving logic to avoid setting conflicts
 
 ### 🐛 Bug Fixes
 - 🔧 **Window Size Constraint**: Fixed GUI window unable to resize to small dimensions issue
-- 🛡️ **Setting Conflicts**: Fixed potential configuration conflicts during settings save operations
+- 🛡�?**Setting Conflicts**: Fixed potential configuration conflicts during settings save operations
 
 ---
 
 ## [v2.2.0] - Layout & Settings UI Enhancements
 
-### ✨ New Features
+### �?New Features
 - 🎨 **Horizontal Layout Mode**: GUI & Web UI combined mode adds left-right layout option for summary and feedback
 
 ### 🚀 Improvements
@@ -320,8 +320,8 @@ This version focuses on improving system stability and user experience, particul
 
 ## [v2.1.1] - Window Positioning Optimization
 
-### ✨ New Features
-- 🖥️ **Smart Window Positioning**: Added "Always show window at primary screen center" setting option
+### �?New Features
+- 🖥�?**Smart Window Positioning**: Added "Always show window at primary screen center" setting option
 - 🌐 **Multi-Monitor Support**: Perfect solution for complex multi-monitor setups like T-shaped screen arrangements
 - 💾 **Position Memory**: Auto-save and restore window position with intelligent visibility detection
 
@@ -330,11 +330,11 @@ This version focuses on improving system stability and user experience, particul
 ## [v2.1.0] - Complete Refactored Version
 
 ### 🎨 Major Refactoring
-- 🏗️ **Complete Refactoring**: GUI and Web UI adopt modular architecture
+- 🏗�?**Complete Refactoring**: GUI and Web UI adopt modular architecture
 - 📁 **Centralized Management**: Reorganized folder structure, improved maintainability
-- 🖥️ **Interface Optimization**: Modern design and improved user experience
+- 🖥�?**Interface Optimization**: Modern design and improved user experience
 
-### ✨ New Features
+### �?New Features
 - 🍎 **macOS Interface Optimization**: Specialized improvements for macOS user experience
 - ⚙️ **Feature Enhancement**: New settings options and auto-close page functionality
 - ℹ️ **About Page**: Added about page with version info, project links, and acknowledgments
@@ -345,7 +345,7 @@ This version focuses on improving system stability and user experience, particul
 
 ### 🚀 Improvements
 - ⌨️ **Enhanced Shortcuts**: Ctrl+Enter supports numeric keypad
-- 🖼️ **Smart Image Pasting**: Ctrl+V directly pastes clipboard images
+- 🖼�?**Smart Image Pasting**: Ctrl+V directly pastes clipboard images
 
 ---
 
@@ -360,7 +360,7 @@ This version focuses on improving system stability and user experience, particul
 ## [v2.0.3] - Encoding Issues Fix
 
 ### 🐛 Critical Fixes
-- 🛡️ **Complete Chinese Character Encoding Fix**: Resolved all Chinese display related issues
+- 🛡�?**Complete Chinese Character Encoding Fix**: Resolved all Chinese display related issues
 - 🔧 **JSON Parsing Error Fix**: Fixed data parsing errors
 
 ---
@@ -368,9 +368,9 @@ This version focuses on improving system stability and user experience, particul
 ## [v2.0.0] - Web UI Support
 
 ### 🌟 Major Features
-- ✅ **Added Web UI Support**: Support for remote environments
-- ✅ **Auto Environment Detection**: Automatically choose appropriate interface
-- ✅ **WebSocket Real-time Communication**: Real-time bidirectional communication
+- �?**Added Web UI Support**: Support for remote environments
+- �?**Auto Environment Detection**: Automatically choose appropriate interface
+- �?**WebSocket Real-time Communication**: Real-time bidirectional communication
 
 ---
 
@@ -379,23 +379,23 @@ This version focuses on improving system stability and user experience, particul
 | Icon | Meaning |
 |------|---------|
 | 🌟 | Version Highlights |
-| ✨ | New Features |
+| �?| New Features |
 | 🚀 | Improvements |
 | 🐛 | Bug Fixes |
 | 🔄 | Refactoring Changes |
 | 🎨 | UI Optimization |
 | ⚙️ | Settings Related |
-| 🖥️ | Window Related |
+| 🖥�?| Window Related |
 | 🌐 | Multi-language/Network Related |
 | 📁 | File Structure |
 | ⌨️ | Shortcuts |
-| 🖼️ | Image Features |
+| 🖼�?| Image Features |
 | 📝 | Prompt Management |
-| ⏰ | Auto-Submit |
+| �?| Auto-Submit |
 | 📊 | Session Management |
 | 🔗 | Connection Monitoring |
-| 🏗️ | Architecture Changes |
-| 🛠️ | Technical Improvements |
+| 🏗�?| Architecture Changes |
+| 🛠�?| Technical Improvements |
 | 📚 | Documentation Updates |
 
 ---
