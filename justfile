@@ -1,5 +1,5 @@
-# Justfile for mcp-feedback-enhanced development
-# 適用於 mcp-feedback-enhanced 專案開發
+# Justfile for mcp-feedback-enhanced-gw development
+# 適用於 mcp-feedback-enhanced-gw 專案開發
 # Cross-platform compatible with Windows, macOS, and Linux
 
 # Cross-platform shell configuration
@@ -136,11 +136,11 @@ test-func:
 
 # Run Web UI tests (continuous)
 test-web:
-    uvx --no-cache --with-editable . mcp-feedback-enhanced test --web
+    uvx --no-cache --with-editable . mcp-feedback-enhanced-gw test --web
 
 # Run desktop application functional tests
 test-desktop-func:
-    uvx --no-cache --with-editable . mcp-feedback-enhanced test --desktop
+    uvx --no-cache --with-editable . mcp-feedback-enhanced-gw test --desktop
 
 # Run all tests including desktop and functional tests
 test-all: test test-func test-desktop
@@ -218,4 +218,3 @@ clean-desktop:
 # Build complete package with desktop app
 build-all: clean build-desktop-release build
     @echo "🎉 Complete build finished!"
-
