@@ -398,6 +398,14 @@
             "updateSuccess": "提示詞已更新",
             "deleteSuccess": "提示詞已刪除"
         },
+        "tags": {
+            "title": "快速模板",
+            "hint": "點擊標籤快速填入，拖拽調整順序",
+            "emptyState": "尚未建立任何提示詞模板",
+            "emptyHint": "前往設定頁面新增您的第一個提示詞模板",
+            "promptNotFound": "找不到指定的提示詞",
+            "promptApplied": "已套用提示詞："
+        },
         "buttons": {
             "selectPrompt": "常用提示",
             "useLastPrompt": "上次提示",

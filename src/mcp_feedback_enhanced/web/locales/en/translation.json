@@ -395,6 +395,14 @@
             "updateSuccess": "Prompt updated successfully",
             "deleteSuccess": "Prompt deleted successfully"
         },
+        "tags": {
+            "title": "Quick Templates",
+            "hint": "Click tag to fill, drag to reorder",
+            "emptyState": "No prompt templates created yet",
+            "emptyHint": "Go to Settings to create your first prompt template",
+            "promptNotFound": "Prompt not found",
+            "promptApplied": "Prompt applied: "
+        },
         "buttons": {
             "selectPrompt": "Templates",
             "useLastPrompt": "Last Used",

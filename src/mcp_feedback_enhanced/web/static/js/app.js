@@ -513,6 +513,22 @@
             ];
             this.promptInputButtons.init(inputContainers);
 
+            // 5. 初始化標籤 UI
+            console.log('🏷️ 準備初始化 PromptTagsUI...');
+            console.log('🏷️ PromptTagsUI 類是否存在:', !!window.MCPFeedback.Prompt.PromptTagsUI);
+
+            if (window.MCPFeedback.Prompt.PromptTagsUI) {
+                this.promptTagsUI = new window.MCPFeedback.Prompt.PromptTagsUI({
+                    promptManager: this.promptManager,
+                    settingsManager: this.settingsManager,
+                    targetTextareaId: 'combinedFeedbackText'
+                });
+                this.promptTagsUI.init('#promptTagsContainer');
+                console.log('✅ PromptTagsUI 初始化完成');
+            } else {
+                console.error('❌ PromptTagsUI 類未載入');
+            }
+
             console.log('✅ 提示詞管理器初始化完成');
 
         } catch (error) {

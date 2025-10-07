@@ -1,9 +1,136 @@
 /**
  * 提示詞管理功能樣式
  * ===================
- * 
+ *
  * 包含提示詞管理相關的所有 UI 樣式
  */
+
+/* ===== 提示詞標籤樣式 ===== */
+
+.prompt-tags-section {
+    margin-bottom: 0;
+}
+
+.prompt-tags-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.prompt-tags-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.prompt-tags-hint {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    font-style: italic;
+}
+
+.prompt-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 28px;
+    padding: 4px 6px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.prompt-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 11px;
+    color: var(--text-primary);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.prompt-tag:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 4px rgba(0, 122, 204, 0.2);
+}
+
+.prompt-tag:active {
+    transform: translateY(0);
+}
+
+.prompt-tag.auto-submit-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.prompt-tag.auto-submit-tag:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #63408b 100%);
+    border-color: #5568d3;
+}
+
+.prompt-tag.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.prompt-tag.drag-over {
+    border-color: var(--accent-color);
+    border-style: dashed;
+    background: rgba(0, 122, 204, 0.1);
+}
+
+.tag-badge {
+    font-size: 9px;
+}
+
+.tag-name {
+    font-weight: 500;
+}
+
+.prompt-tags-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+}
+
+.prompt-tags-empty .empty-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+    opacity: 0.5;
+}
+
+.prompt-tags-empty .empty-text {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+.prompt-tags-empty .empty-hint {
+    font-size: 10px;
+    color: var(--text-tertiary);
+}
 
 /* ===== 提示詞彈窗樣式 ===== */
 
