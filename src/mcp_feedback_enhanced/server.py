@@ -328,8 +328,8 @@ def create_feedback_text(feedback_data: dict) -> str:
                             if len(img_base64) > 50
                             else img_base64
                         )
-                        img_info += f"\n     Base64 預覽: {preview}"
-                        img_info += f"\n     完整 Base64 長度: {len(img_base64)} 字符"
+                        img_info += f"\n     Base64 Preview: {preview}"
+                        img_info += f"\n     Complete Base64 length: {len(img_base64)} characters"
 
                         # 如果 AI 助手不支援 MCP 圖片，可以提供完整 base64
                         debug_log(f"圖片 {i} Base64 已準備，長度: {len(img_base64)}")
@@ -351,19 +351,23 @@ def create_feedback_text(feedback_data: dict) -> str:
                             else:
                                 mime_type = "image/png"
 
-                            img_info += f"\n     完整 Base64: data:{mime_type};base64,{img_base64}"
+                            img_info += f"\n     Complete Base64: data:{mime_type};base64,{img_base64}"
 
                 except Exception as e:
-                    debug_log(f"圖片 {i} Base64 處理失敗: {e}")
+                    debug_log(f"Image {i} Base64 processing failed: {e}")
 
             text_parts.append(img_info)
 
         # 添加兼容性說明
         text_parts.append(
-            "\n💡 注意：如果 AI 助手無法顯示圖片，圖片數據已包含在上述 Base64 信息中。"
+            "\n💡 Note: If the AI assistant cannot display the image, the image data is already included in the above Base64 information."
         )
 
-    return "\n\n".join(text_parts) if text_parts else "用戶未提供任何回饋內容。"
+    return (
+        "\n\n".join(text_parts)
+        if text_parts
+        else "The user did not provide any feedback."
+    )
 
 
 def process_images(images_data: list[dict]) -> list[MCPImage]:
