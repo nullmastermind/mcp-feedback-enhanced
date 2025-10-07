@@ -206,10 +206,10 @@ def build_tauri_app_multiplatform(project_root: Path, release: bool = True):
 
     # 定義目標平台
     targets = [
-        ("x86_64-pc-windows-msvc", "mcp-feedback-enhanced-desktop.exe"),
-        ("x86_64-apple-darwin", "mcp-feedback-enhanced-desktop"),
-        ("aarch64-apple-darwin", "mcp-feedback-enhanced-desktop"),
-        ("x86_64-unknown-linux-gnu", "mcp-feedback-enhanced-desktop"),
+        ("x86_64-pc-windows-msvc", "mcp-feedback-enhanced-gw-desktop.exe"),
+        ("x86_64-apple-darwin", "mcp-feedback-enhanced-gw-desktop"),
+        ("aarch64-apple-darwin", "mcp-feedback-enhanced-gw-desktop"),
+        ("x86_64-unknown-linux-gnu", "mcp-feedback-enhanced-gw-desktop"),
     ]
 
     successful_builds = []
@@ -231,7 +231,7 @@ def build_tauri_app_multiplatform(project_root: Path, release: bool = True):
             "cargo",
             "build",
             "--bin",
-            "mcp-feedback-enhanced-desktop",
+            "mcp-feedback-enhanced-gw-desktop",
             "--target",
             target,
         ]
@@ -282,10 +282,10 @@ def copy_multiplatform_artifacts(
 
     # 定義平台到文件名的映射
     platform_mapping = {
-        "x86_64-pc-windows-msvc": "mcp-feedback-enhanced-desktop.exe",
-        "x86_64-apple-darwin": "mcp-feedback-enhanced-desktop-macos-intel",
-        "aarch64-apple-darwin": "mcp-feedback-enhanced-desktop-macos-arm64",
-        "x86_64-unknown-linux-gnu": "mcp-feedback-enhanced-desktop-linux",
+        "x86_64-pc-windows-msvc": "mcp-feedback-enhanced-gw-desktop.exe",
+        "x86_64-apple-darwin": "mcp-feedback-enhanced-gw-desktop-macos-intel",
+        "aarch64-apple-darwin": "mcp-feedback-enhanced-gw-desktop-macos-arm64",
+        "x86_64-unknown-linux-gnu": "mcp-feedback-enhanced-gw-desktop-linux",
     }
 
     copied_files = []

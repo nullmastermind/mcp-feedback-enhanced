@@ -19,8 +19,7 @@ try:
     from mcp_feedback_enhanced.debug import server_debug_log as debug_log
     from mcp_feedback_enhanced.web.main import WebUIManager, get_web_ui_manager
 except ImportError as e:
-    # 在這裡無法使用 debug_log，因為導入失敗
-    sys.stderr.write(f"無法導入 MCP Feedback Enhanced 模組: {e}\n")
+    print(f"無法導入 MCP Feedback Enhanced 模組: {e}")
     sys.exit(1)
 
 
@@ -68,8 +67,8 @@ class DesktopApp:
             self.web_manager.start_server()
 
         # 等待服務器啟動
-        max_wait = 10.0  # 最多等待 10 秒
-        wait_count = 0.0
+        max_wait = 10  # 最多等待 10 秒
+        wait_count = 0
         while wait_count < max_wait:
             if (
                 self.web_manager.server_thread
@@ -221,8 +220,7 @@ class DesktopApp:
             # Windows 下隱藏控制台視窗
             creation_flags = 0
             if os.name == "nt":
-                # CREATE_NO_WINDOW 只在 Windows 上存在
-                creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0x08000000)
+                creation_flags = subprocess.CREATE_NO_WINDOW
 
             self.app_handle = subprocess.Popen(
                 [str(tauri_exe)],
@@ -328,7 +326,7 @@ def run_desktop_app():
             loop.close()
 
     except Exception as e:
-        sys.stderr.write(f"桌面應用程式運行失敗: {e}\n")
+        print(f"桌面應用程式運行失敗: {e}")
         sys.exit(1)
 
 
