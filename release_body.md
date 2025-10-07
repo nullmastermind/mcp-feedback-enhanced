@@ -1,4 +1,4 @@
-# Release v2.6.0 - Latest Release
+# Release v2.6.1 - Latest Release
 
 ## 🌟 Key Highlights
 
@@ -11,19 +11,19 @@
 ### 🇹🇼 繁體中文
 📖 **[查看完整繁體中文發布說明](https://github.com/nullmastermind/mcp-feedback-enhanced/blob/main/RELEASE_NOTES/CHANGELOG.zh-TW.md)**
 
-### 🇨🇳 简体中�?
+### 🇨🇳 简体中文
 📖 **[查看完整简体中文发布说明](https://github.com/nullmastermind/mcp-feedback-enhanced/blob/main/RELEASE_NOTES/CHANGELOG.zh-CN.md)**
 
 ---
 
-## 📦 Quick Installation / 快速安�?
+## 📦 Quick Installation / 快速安裝
 
 ```bash
-# Latest version / 最新版�?
+# Latest version / 最新版本
 uvx mcp-feedback-enhanced-gw@latest
 
-# This specific version / 此特定版�?
-uvx mcp-feedback-enhanced-gw@v2.6.0
+# This specific version / 此特定版本
+uvx mcp-feedback-enhanced-gw@v2.6.1
 ```
 
 ## 🔗 Links
